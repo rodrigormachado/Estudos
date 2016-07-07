@@ -1,6 +1,6 @@
-algoritmo "semnome"
+algoritmo "dissecandoaMatriz"
 // Função :
-// Autor :
+// Autor : Rodrigo Machado
 // Data : 29/06/2016
 // Seção de Declarações
 var
