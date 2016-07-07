@@ -1,4 +1,4 @@
-algoritmo "semnome"
+algoritmo "testesEmMatrizes"
 // Função :
 // Autor :
 // Data : 29/06/2016
