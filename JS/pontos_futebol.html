@@ -1,0 +1,38 @@
+<script>
+var pulaLinha = function(){
+    document.write("<br>");
+};
+
+var mostra = function(texto){
+    document.write(texto);
+    pulaLinha();
+};
+
+var calculaPontos = function(vitorias, empates, derrotas){
+    return (vitorias * 3) + parseInt(empates) - derrotas;
+};
+
+var vitorias = prompt("Quantos jogos seu time venceu?");
+var empates = prompt("Quantos jogos seu time empatou?");
+var derrotas = prompt("Quantos jogos seu time perdeu?")
+var pontos = calculaPontos(vitorias, empates, derrotas);
+mostra("Seu time tem " + pontos + " pontos!");
+
+var vitorias_adv = prompt("Quantos jogos o time rival venceu?");
+var empates_adv = prompt("Quantos jogos o time rival empatou?");
+var derrotas_adv = prompt("Quantos jogos seu time perdeu?")
+var pontos_adv = calculaPontos(vitorias_adv, empates_adv, derrotas_adv);
+mostra("O time rival tem " + pontos_adv + " pontos!");
+
+if (pontos > pontos_adv){
+mostra("Estamos bem!");
+}
+
+if (pontos < pontos_adv){
+mostra("Estamos mal");
+}
+
+if (pontos == pontos_adv){
+mostra("Seu time está empatado com o rival");
+}
+</script>
