@@ -1,0 +1,15 @@
+<script>
+var mostra = function(texto){
+    document.write(texto + "<br>");
+}
+
+var anoInicial = 1896;
+var anoLimite = prompt("Até que ano deseja testar?");
+
+while(anoInicial <= anoLimite){
+    mostra(anoInicial + " tem olimpíada!");
+    anoInicial = anoInicial + 4;
+}
+
+mostra("Nesses anos houveram ou haverão olimpíadas.");
+</script>

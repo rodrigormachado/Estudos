@@ -1,0 +1,16 @@
+<script>
+
+var mostra = function(texto){
+    document.write(texto + "<br>");
+}
+var anoTexto = prompt("De que ano você quer iniciar?");
+var anoDeCopa = parseInt(anoTexto);
+var anoLimite = prompt("Até que ano você quer que calcule?");
+
+while(anoDeCopa <= anoLimite){
+    mostra(anoDeCopa + " tem copa!");
+    anoDeCopa = anoDeCopa + 4;
+}
+
+mostra("Esses são os anos em que houveram ou haverão copa do mundo.");
+</script>
