@@ -1,0 +1,13 @@
+<script>
+var mostra = function(texto){
+    document.write(texto + "<br>");
+}
+
+var multiplicador = 1;
+var valor = prompt("Escreva o número que deseja ver a tabuada: ");
+
+while(multiplicador <= 10){
+    mostra(valor + "*" + multiplicador + "=" + valor * multiplicador);
+    multiplicador = multiplicador + 1;
+}
+</script>
