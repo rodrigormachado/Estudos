@@ -1,0 +1,27 @@
+<script>
+
+var sorteia = function(n){
+    num = Math.round(Math.random() * n);
+    return num;
+}
+
+var numeroPensado = sorteia(10);
+
+var numeroDaTentativa = 1;
+while(numeroDaTentativa <= 3 && chute != numeroPensado){
+    var chute = prompt("Digite um número e tente a sorte: ");
+    if(chute == numeroPensado){
+        alert("Você é um grande adivinho!! O computador pensou exatamente no número " + numeroPensado);
+    } else {
+        alert("Você errou! O computador pensou em outro número");
+        if(chute < numeroPensado){
+            alert("O número digitado é menor do que o número pensado. Aumente seu chute.");
+        }
+        if(chute > numeroPensado){
+            alert("O número digitado é maior do que o número pensado. Diminua seu chute.");
+        }
+    }
+    numeroDaTentativa++;
+}
+alert("O valor sorteado era realmente: " + numeroPensado);	
+</script>
