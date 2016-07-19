@@ -1,0 +1,57 @@
+<input type="text" id="numero" />
+<input type="submit" id="adiciona" value="Adicione ao lado os números da sua aposta" />
+<input type="submit" id="verifica" value="Verifique se ganhou 1 milhão" />
+
+<script>
+var numerosCertos = [7, 16, 21, 34, 45, 58]
+var aposta = [];
+
+var adicionaNumeros = function(){
+
+    if(aposta.length < 6){
+        if(verificaNumero()){
+        var numero = document.getElementById("numero").value;
+        aposta.push(numero);
+        console.log(aposta);
+        } 
+    }else {
+        alert("Você não pode apostar mais números!");
+     }
+    document.getElementById("numero").value = "";   
+}
+var botaoAdiciona = document.getElementById("adiciona");
+botaoAdiciona.onclick = adicionaNumeros;
+
+var verificaNumero = function(){    
+
+    var numero = document.getElementById("numero").value;
+    for(var x = 0; x < 6; x = x + 1){
+        if(numero == aposta[x]){
+            alert("Número já apostado!");
+            return false;
+        }
+    }
+    return true;
+}
+
+var compararNumeros = function(a,b){
+    return a - b;
+}
+
+var verificaAposta = function(){
+
+    numerosCertos.sort(compararNumeros);
+    aposta.sort(compararNumeros);
+   
+    for(y = 0; y < 6; y = y + 1){
+        if(numerosCertos[y] != aposta[y]){
+            alert("Você não ganhou o prêmio.");
+            return;
+        }
+    }
+    alert("Agora você é milionário!!!");
+}
+botaoVerifica = document.getElementById("verifica");
+botaoVerifica.onclick = verificaAposta;
+
+</script>
