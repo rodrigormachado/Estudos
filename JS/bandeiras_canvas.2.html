@@ -1,0 +1,19 @@
+<canvas id="tela" width="600" height="400"></canvas>
+
+<script>
+var tela = document.getElementById("tela");
+var x = tela.getContext("2d");
+
+//Bandeira de Laos
+x.fillStyle="red";
+x.fillRect(0, 0, 350, 220);
+
+x.fillStyle="blue";
+x.fillRect(0, 60, 350, 100);
+
+x.fillStyle="white";
+x.beginPath();
+x.arc(175, 110, 40, 0, 2*3.14);
+x.fill();
+
+</script>

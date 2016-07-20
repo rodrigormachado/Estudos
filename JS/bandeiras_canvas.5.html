@@ -1,0 +1,43 @@
+<canvas id="tela" width="600" height="400"></canvas>
+
+<script>
+var tela = document.getElementById("tela");
+var y = tela.getContext("2d");
+
+//Bandeira do Brasil
+y.fillStyle="green";
+y.fillRect(0, 0, 600, 400);
+
+y.fillStyle="yellow";
+y.beginPath();
+y.moveTo(300, 30);
+y.lineTo(550, 190);
+y.lineTo(300, 370);
+y.lineTo(40, 200);
+y.lineTo(300, 30);
+y.fill();
+y.closePath();
+
+y.fillStyle="blue";
+y.beginPath();
+y.arc(295, 200, 110, 0, 2*3.14);
+y.fill();
+
+y.fillStyle="white";
+y.beginPath();
+y.arc(330, 150, 2, 0, 2*3.14);
+y.fill();
+
+var estrela = function(a,b){
+    var tela = document.getElementById("tela");
+    var y = tela.getContext("2d");
+    y.fillStyle="white";
+    y.beginPath();
+    y.arc(a, b, 2, 0, 2*3.14);
+    y.fill();
+}
+
+estrela(205,250);
+estrela(220,235);
+
+</script>

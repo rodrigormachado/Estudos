@@ -1,0 +1,20 @@
+<canvas id="tela" width="600" height="400"></canvas>
+
+<script>
+
+var tela = document.getElementById("tela");
+var x = tela.getContext("2d");
+
+//Bandeira de Niger
+x.fillStyle="orange";
+x.fillRect(0, 0, 320, 100);
+
+x.fillStyle="green";
+x.fillRect(0, 180, 320, 100);
+
+x.fillStyle="orange";
+x.beginPath();
+x.arc(160, 140, 38, 0, 2*3.14);
+x.fill();
+
+</script>
