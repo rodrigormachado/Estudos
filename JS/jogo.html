@@ -1,0 +1,19 @@
+<canvas id="tela" width="600" height="600"></canvas>
+
+<script>
+tela = document.getElementById("tela");
+screen = tela.getContext("2d");
+
+var desenhaLinhas = function(x1,y1,x2,y2){
+    screen.strokeStyle="black";
+    screen.beginPath();
+    screen.moveTo(x1, y1);
+    screen.lineTo(x2, y2);
+    screen.stroke();
+}
+
+desenhaLinhas(0,200,600,200);
+desenhaLinhas(0,400,600,400);
+desenhaLinhas(200,0,200,600);
+desenhaLinhas(400,0,400,600);
+</script>
