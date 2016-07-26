@@ -1,0 +1,32 @@
+<canvas id="tela" width="600" height="400"></canvas>
+
+<script>
+var tela = document.getElementById("tela");
+var screen = tela.getContext("2d");
+
+//screen.fillStyle="green"; código para criar um retângulo verde
+//screen.fillRect(0, 0, 200, 400); de tamanho 600x400
+
+var quadrado = function(x,y){
+    screen.strokeStyle="blue";
+    screen.strokeRect(x, y, 75, 75);
+    //função para criar um quadrado recebendo 2 parâmetros:
+    // posição do eixo x e posição do eixo y
+}
+
+var limpaTela = function(){
+    screen.clearRect(0, 0, 600, 400);
+    //função para limpar a tela
+}
+
+var x = 1;
+var desenhaQuadrado = function(){
+    //limpaTela();
+    quadrado(x,100);
+    x = x + 1;
+    //função para desenhar o quadrado com passagem de parâmetros
+}
+
+setInterval(desenhaQuadrado, 30);
+//função nativa do JS para chamar outra função em determinado intervalo
+</script>

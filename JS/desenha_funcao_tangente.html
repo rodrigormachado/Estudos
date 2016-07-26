@@ -1,0 +1,23 @@
+<canvas id="tela" width="600" height="400"></canvas>
+
+<script>
+var tela = document.getElementById("tela");
+var screen = tela.getContext("2d");
+
+var funcaoTangente = function(x){
+    return Math.tan(x/20) * 100 + 200;
+}
+
+var x = 0;
+var desenhaFuncao = function(){
+    y = funcaoTangente(x);
+
+    screen.fillStyle="blue";
+    screen.beginPath();
+    screen.arc(x, 400 - y, 10, 0, 2*Math.PI);
+    screen.fill();
+    x = x + 1;
+    window.requestAnimationFrame(desenhaFuncao);
+}
+window.requestAnimationFrame(desenhaFuncao);
+</script>

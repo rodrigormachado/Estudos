@@ -1,0 +1,15 @@
+<canvas id="tela" width="600" height="400"></canvas>
+
+<script>
+var tela = document.getElementById("tela");
+var c = tela.getContext("2d");
+
+c.fillStyle="gray";
+c.fillRect(0, 0, 600, 400);
+
+tela.onclick = function(mouseEvent){
+    var x = mouseEvent.pageX - tela.offsetLeft;
+    var y = mouseEvent.pageY - tela.offsetTop;
+    alert("Você clicou na posição " + x + ", " + y);
+}
+</script>

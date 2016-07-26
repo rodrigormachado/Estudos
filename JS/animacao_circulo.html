@@ -1,0 +1,34 @@
+<canvas id="tela" width="600" height="400"></canvas>
+
+<script>
+var tela = document.getElementById("tela");
+var screen = tela.getContext("2d");
+
+//screen.fillStyle="green"; código para criar um retângulo verde
+//screen.fillRect(0, 0, 200, 400); de tamanho 600x400
+
+var circulo = function(x,y,raio){
+    screen.strokeStyle="blue";
+    screen.beginPath();
+    screen.arc(x, y, raio, 0, 2*3.14);
+    screen.stroke();
+    //função para criar um círculo recebendo 3 parâmetros:
+    // posição do eixo x, posição do eixo y e raio
+}
+
+var limpaTela = function(){
+    screen.clearRect(0, 0, 600, 400);
+    //função para limpar a tela
+}
+
+var x = 1;
+var desenha = function(){
+    //limpaTela();
+    circulo(x, 200, x*0.25);
+    x = x + 1;
+    //função para desenhar o círculo com passagem de parâmetros
+}
+
+setInterval(desenha, 30);
+//função nativa do JS para chamar outra função em determinado intervalo
+</script>

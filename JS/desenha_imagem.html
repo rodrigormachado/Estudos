@@ -1,0 +1,17 @@
+<canvas id="tela" width="600" height="400"></canvas>
+
+<script>
+var tela = document.getElementById("tela");
+var screen = tela.getContext("2d");
+
+var imagem = new Image();
+imagem.src = "http://www.joaoleitao.com/viagens/imagens/bandeiraspt/bandeira-uruguai.png";
+
+var x = 1;
+var desenhaImagem = function(){
+    screen.drawImage(imagem, 100, 100);
+    x = x + 1;
+}
+
+imagem.onload = desenhaImagem;
+</script>

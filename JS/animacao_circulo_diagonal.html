@@ -1,0 +1,21 @@
+<canvas id="tela" width="600" height="400"></canvas>
+
+<script>
+var tela = document.getElementById("tela");
+var screen = tela.getContext("2d");
+
+var circulo = function(x,y,raio){
+    screen.strokeStyle="blue";
+    screen.beginPath();
+    screen.arc(x, y, raio, 0, 2*3.14);
+    screen.stroke();
+}
+
+var x = 1;
+var desenha = function(){
+    circulo(x, x, 10);
+    x = x + 1;
+}
+
+setInterval(desenha, 30);
+</script>
