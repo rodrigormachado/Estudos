@@ -3,6 +3,8 @@
 #include<time.h>
 
 int main(){
+    int aux = 1;
+    do{
     printf("*************************************\n");
     printf("* Bem vindo ao jogo de adivinhacao! *\n");
     printf("*************************************\n");
@@ -19,7 +21,7 @@ int main(){
     printf("Qual o nivel de dificuldade?\n");
     printf("(1)Facil (2)Medio (3)Dificil\n\n");
     printf("Escolha: ");
-    scanf("%d", nivel);
+    scanf("%d", &nivel);
     printf("\n");
 
     switch(nivel){
@@ -65,9 +67,15 @@ int main(){
     if(chute != numerosecreto){
         printf("Voce perdeu. O numero secreto era: %d\n", numerosecreto);
         printf("Voce nao pontuou.");
-        printf("\n");
+        printf("\n\n");
     }else{
         printf("Voce fez %.2f pontos\n", pontos);
         printf("Fim de jogo!\n");
+        printf("\n");
     }
+    printf("Deseja jogar de novo? 1 - Sim/0 - Nao -> ");
+    scanf("%d", &aux);
+    printf("\n");
+    }while(aux == 1);
+    printf("Jogo encerrado");
 }
