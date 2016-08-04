@@ -1,4 +1,6 @@
 #include<stdio.h>
+#include<stdlib.h>
+#include<time.h>
 
 int main(){
     printf("*************************************\n");
@@ -6,8 +8,10 @@ int main(){
     printf("*************************************\n");
     printf("\n");
 
-    int numerosecreto = 25;
+    srand(time(0));
+    int numerosecreto = rand() % 50;
     int chute;
+    double pontos = 1000;
     int ganhou = 0;
     int tentativas = 1;
 
@@ -37,6 +41,9 @@ int main(){
             printf("\n");
           }
         tentativas++;
+        double pontosperdidos = abs(chute - numerosecreto)/2.0;
+        pontos = pontos - pontosperdidos;
        }
+    printf("Voce fez %.2f pontos\n", pontos);
     printf("Fim de jogo!\n");
     }
