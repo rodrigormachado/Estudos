@@ -3,6 +3,7 @@
 #include<time.h>
 
 int main(){
+    int limsup;
     int aux = 1;
     do{
     printf("*************************************\n");
@@ -10,11 +11,13 @@ int main(){
     printf("*************************************\n");
     printf("\n");
 
+    printf("Digite o limite superior: ");
+    scanf("%d", &limsup);
+
     srand(time(0));
-    int numerosecreto = rand() % 50;
+    int numerosecreto = rand() % limsup;
     int chute;
     double pontos = 1000;
-
     int nivel;
     int totaldetentativas;
 
@@ -38,12 +41,19 @@ int main(){
 
     int i;
     for(i = 1; i <= totaldetentativas; i++){
+            int ultimochutado = chute;
             printf("Tentativa %d de %d\n", i, totaldetentativas);
             printf("Digite o seu chute: ");
             scanf("%d", &chute);
 
             if(chute < 0){
                 printf("Voce nao pode chutar numeros negativos!\n");
+                printf("\n");
+                i--;
+                continue;
+            }
+            if(chute == ultimochutado){
+                printf("Voce ja digitou esse numero! Tente novamente\n");
                 printf("\n");
                 i--;
                 continue;
