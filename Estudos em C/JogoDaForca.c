@@ -2,44 +2,66 @@
 #include<stdlib.h>
 #include<string.h>
 
-int main(){
+void abertura(){
+    printf("/**************************/\n");
+    printf("/*      JOGO DA FORCA    */\n");
+    printf("/************************/\n\n");
+}
 
-    char palavrasecreta[20];
+void chuta(char chutes[], int* tentativas){
+    char chute;
+    printf("Que letra deseja chutar: ");
+    scanf(" %c", &chute);
 
-    sprintf(palavrasecreta, "MELANCIA");
-    int acertou = 0;
-    int enforcou = 0;
+    chutes[*tentativas] = chute;
+    (*tentativas)++;
+}
 
-    char chutes[26];
-    int tentativas = 0;
-
-    do{
-        int i;
-        for(i = 0; i < strlen(palavrasecreta); i++){
-
-            int achou = 0;
-
-        int j;
-        for(j = 0; j < tentativas; j++){
-            if (chutes[j] == palavrasecreta[i]){
-                achou = 1;
-                break;
-            }
+int jachutou(char letra, char* chutes, int tentativas){
+    int achou = 0;
+    int j;
+    for(j = 0; j < tentativas; j++){
+        if(chutes[j] == letra){
+            achou = 1;
+            break;
         }
-        if (achou){
+    }
+    return achou;
+}
+
+void desenhaforca(char* palavrasecreta, char* chutes, int tentativas){
+    printf("Voce ja deu %d chute(s)\n", tentativas);
+
+    int i;
+    for(i = 0; i < strlen(palavrasecreta); i++){
+        if(jachutou(palavrasecreta[i], chutes, tentativas)){
             printf("%c ", palavrasecreta[i]);
         } else {
             printf("_ ");
         }
     }
     printf("\n");
+}
 
-    char chute;
-    printf("Que letra deseja chutar: ");
-    scanf(" %c", &chute);
+void escolhepalavra(char* palavrasecreta){
+    sprintf(palavrasecreta, "MELANCIA");
+}
+int main(){
 
-    chutes[tentativas] = chute;
-    tentativas++;
+    char palavrasecreta[20];
+
+    int acertou = 0;
+    int enforcou = 0;
+
+    char chutes[26];
+    int tentativas = 0;
+
+    abertura();
+    escolhepalavra(palavrasecreta);
+
+    do{
+        desenhaforca(palavrasecreta, chutes, tentativas);
+        chuta(chutes, &tentativas);
 
     }while(!acertou && !enforcou);
 }
